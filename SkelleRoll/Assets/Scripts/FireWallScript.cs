@@ -3,6 +3,8 @@ using System.Collections;
 
 public class FireWallScript : MonoBehaviour {
 
+    public GameObject skull;
+
 	// Use this for initialization
 	void Start () {
 	    //make a global variable of target. in update take target's velocity and apply it to this's position
