@@ -36,6 +36,12 @@ namespace UnityStandardAssets.Vehicles.Ball
         }
 
 
+        public bool Jump
+        {
+            get { return jump; }
+            set { jump = value; }
+        }
+
         private void Update()
         {
             // Get the axis and jump input.
