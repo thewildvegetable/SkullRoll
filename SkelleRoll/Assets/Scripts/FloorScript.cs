@@ -15,7 +15,7 @@ public class FloorScript : MonoBehaviour {
         time += Time.deltaTime;
 
         //if time passed a certain point then delete this
-        if (time >= 180)
+        if (time >= 80)
         {
             Destroy(this);
         }
