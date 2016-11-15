@@ -9,7 +9,7 @@ public class FireWallScript : MonoBehaviour {
     private float distance = float.MaxValue;
     private Vector3 seekingForce = Vector3.zero;
     private Vector3 steeringForce = Vector3.zero;
-    private float seekWeight = 1.3f;
+    public float seekWeight = 1.3f;
 
 	// Use this for initialization
 	void Start () {
