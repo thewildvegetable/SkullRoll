@@ -9,9 +9,12 @@ public class FireWallScript : MonoBehaviour {
     private float distance = float.MaxValue;
     private Vector3 seekingForce = Vector3.zero;
     private Vector3 steeringForce = Vector3.zero;
+<<<<<<< HEAD
+    public float seekWeight = 1.3f;
+=======
     public float seekWeight = 0.8f;
     private int listPos = 0;        //position in the handle list
-
+>>>>>>> origin/FireWall
 
 	// Use this for initialization
 	void Start () {

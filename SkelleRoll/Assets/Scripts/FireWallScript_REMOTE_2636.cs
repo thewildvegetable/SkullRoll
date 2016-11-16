@@ -12,7 +12,6 @@ public class FireWallScript : MonoBehaviour {
     public float seekWeight = 0.8f;
     private int listPos = 0;        //position in the handle list
 
-
 	// Use this for initialization
 	void Start () {
 
