@@ -42,7 +42,7 @@ public class FireWallScript : MonoBehaviour {
             fireWall.transform.LookAt(target.transform);
 
             //move
-            fireWall.transform.position = fireWall.transform.position + steeringForce;
+            fireWall.transform.position = fireWall.transform.position - steeringForce;
 
             //this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + .02f);
         }
