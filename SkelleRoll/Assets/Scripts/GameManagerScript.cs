@@ -8,7 +8,7 @@ public class GameManagerScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        handles.AddRange(GameObject.FindGameObjectsWithTag("rearHandle"));
+       //handles.AddRange(GameObject.FindGameObjectsWithTag("rearHandle"));
         handles.AddRange(GameObject.FindGameObjectsWithTag("frontHandle"));
 	}
 	
