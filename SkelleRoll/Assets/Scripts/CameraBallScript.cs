@@ -13,6 +13,9 @@ public class CameraBallScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        this.transform.position = skull.transform.position + pos;
+        if (skull != null)
+        {
+            this.transform.position = skull.transform.position + pos;
+        }
 	}
 }
