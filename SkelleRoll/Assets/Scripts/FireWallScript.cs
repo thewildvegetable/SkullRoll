@@ -11,6 +11,7 @@ public class FireWallScript : MonoBehaviour {
     private Vector3 steeringForce = Vector3.zero;
     public float seekWeight = 0.8f;
     private int listPos = 0;        //position in the handle list
+    public bool enabled = true;
 
 
 	// Use this for initialization
@@ -20,7 +21,7 @@ public class FireWallScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (target != null)
+        if (target != null && enabled)
         {
             //reset steering force
             steeringForce = Vector3.zero;
