@@ -4,7 +4,8 @@ using System.Collections;
 public class SkullpowerUps : MonoBehaviour {
 
 	// Use this for initialization
-    private bool
+    //Commented out until we get the full version.
+        //private bool
 	void Start () {
 	
 	}
