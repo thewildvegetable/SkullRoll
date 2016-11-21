@@ -12,4 +12,9 @@ public class InvinciblePick : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void OnTriggerEnter(Collider ply)
+    {
+
+    }
 }
