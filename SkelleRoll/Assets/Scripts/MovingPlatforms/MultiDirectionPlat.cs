@@ -17,7 +17,7 @@ public class MultiDirectionPlat : MonoBehaviour {
 
     void Start()
     {
-        posVect = transform.position;
+        posVect = transform.localPosition;
     }
 
     // Update is called once per frame
@@ -27,15 +27,15 @@ public class MultiDirectionPlat : MonoBehaviour {
         {
             case 1://up and down
                 float nextY = posVect.y + amp * Mathf.Sin(frequency * Time.time);
-                transform.position = new Vector3(transform.position.x, nextY, transform.position.z);
+                transform.position = new Vector3(transform.localPosition.x, nextY, transform.localPosition.z);
                 break;
             case 2://side to side
                 float nextX = posVect.x + amp * Mathf.Sin(frequency * Time.time);
-                transform.position = new Vector3(nextX, transform.position.y, transform.position.z);
+                transform.position = new Vector3(nextX, transform.localPosition.y, transform.localPosition.z);
                 break;
             case 3://back and forth
                 float nextZ = posVect.z + amp * Mathf.Sin(frequency * Time.time);
-                transform.position = new Vector3(transform.position.x, transform.position.y, nextZ);
+                transform.position = new Vector3(transform.localPosition.x, transform.localPosition.y, nextZ);
                 break;
             default:
                 break;
