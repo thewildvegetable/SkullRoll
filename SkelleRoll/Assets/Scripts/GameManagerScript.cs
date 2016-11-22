@@ -21,11 +21,15 @@ public class GameManagerScript : MonoBehaviour {
         if (timer % 60 == 0) {
             int spawnType = Random.Range(0, prefabs.Count);
 
-            GameObject temp = prefabs[spawnType];
+            GameObject temp = Instantiate(prefabs[spawnType]);
             Vector3 position = floors[floors.Count - 1].transform.position;
-            position.z += 60;
-            temp.transform.position = position;
-            Instantiate(temp, temp.transform.position, floors[floors.Count - 1].transform.rotation);
+            position.z = floors.Count * 60;
+            position.y = 0;
+            temp.transform.SetParent(this.gameObject.transform, false);
+            temp.transform.localPosition = position;
+            Debug.Log(position);
+            
+            //Instantiate(temp, temp.transform.position, this.gameObject.transform.rotation);
             floors.Add(temp);
         }
 	}
