@@ -7,15 +7,17 @@ public class InvinciblePick : MonoBehaviour {
 
     // Use this for initialization 
     private SkullpowerUps powerUp;
+    public SkullpowerUps powers;
 
-    public Light glowInvins;//the glow invinsibility effect
+    
 
     public int powerType;//this is the powerup type relating to the index in the powerup script
     //*Right now 0 is invincibility*
     //can add more as we go a long
 	void Start () {
-        powerUp = GameObject.FindGameObjectWithTag("player").GetComponent<SkullpowerUps>();
-        glowInvins.enabled = false; 
+        //powerUp = GameObject.FindGameObjectWithTag("player").GetComponent<SkullpowerUps>();
+  
+       
 	}
 	
 	// Update is called once per frame
@@ -27,12 +29,16 @@ public class InvinciblePick : MonoBehaviour {
     {
         if(ply.gameObject.tag=="player")
         {
-
+            switch(powerType)
+            {
+                //more cases will be added if there are more powerups
+                case 0:
+                    powers.powerupActive[0] = true;
+                    Destroy(this.gameObject);
+                    break;
+                default:
+                    break;
+            }
         }
-    }
-
-    public void Invinsibility()
-    {
-
     }
 }
