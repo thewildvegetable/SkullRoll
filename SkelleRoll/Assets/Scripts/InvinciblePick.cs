@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class InvinciblePick : MonoBehaviour {
+public class PickUps : MonoBehaviour {
     //this will instead (like the enum for moving platforms)
     //hold an enum which will determin what type of powerup it is
 
