@@ -1,21 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class FloorScript : MonoBehaviour {
 
-    float time;
+    public List<GameObject> spawners = new List<GameObject>();
+    public GameObject skull;
 
 	// Use this for initialization
 	void Start () {
-        time = 0;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        time += Time.deltaTime;
 
         //if time passed a certain point then delete this
-        if (time >= 20)
+        if (skull.transform.position.z >= this.transform.position.z + 30)
         {
             Destroy(this);
         }
