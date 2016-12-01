@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class InvinciblePick : MonoBehaviour {
+public class PickUps : MonoBehaviour {
     //this will instead (like the enum for moving platforms)
     //hold an enum which will determin what type of powerup it is
 
     // Use this for initialization 
-    private SkullpowerUps powerUp;
     public SkullpowerUps powers;
 
     
@@ -29,16 +28,12 @@ public class InvinciblePick : MonoBehaviour {
     {
         if(ply.gameObject.tag=="player")
         {
-            switch(powerType)
-            {
                 //more cases will be added if there are more powerups
-                case 0:
-                    powers.powerupActive[0] = true;
+               
+                    powers.powerupActive[powerType] = true;
                     Destroy(this.gameObject);
-                    break;
-                default:
-                    break;
-            }
+
+            
         }
     }
 }
