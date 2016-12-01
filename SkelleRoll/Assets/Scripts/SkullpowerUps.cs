@@ -64,7 +64,6 @@ public class SkullpowerUps : MonoBehaviour
 
         if (powerCurrTime[0] < powerupTime[0])
         {
-            Invinsible();
             powerCurrTime[0]++;
             canBeHit = false;
             glowInvins.enabled = true;
@@ -81,7 +80,7 @@ public class SkullpowerUps : MonoBehaviour
     /// <summary>
     /// This will increase the score when a coin is collected
     /// </summary>
-    private void IncreaseScore()
+    public void IncreaseScore()
     {
         if(powerupActive[1]==false)
         {
