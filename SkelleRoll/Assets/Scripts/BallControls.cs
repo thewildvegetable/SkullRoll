@@ -3,8 +3,10 @@ using System.Collections;
 
 public class BallControls : MonoBehaviour {
 
-    public float speed;
-    private bool canJump = true;
+    public float acceleration;
+    public float maxSpeed;
+    private bool canJump = false;
+    private float jumpForce = 30;
 
     private Rigidbody rb;
 
@@ -22,12 +24,16 @@ public class BallControls : MonoBehaviour {
 
         if(Input.GetKey(KeyCode.Space) && canJump)
         {
-            yspeed = 30;
+            yspeed = jumpForce;
+            canJump = false;
         }
 
         Vector3 force = new Vector3(xspeed, yspeed, zspeed);
 
-        rb.AddForce(force * speed);
+        rb.AddForce(force * acceleration);
+        Vector3 temp = rb.velocity;
+        temp = Vector3.ClampMagnitude(temp, maxSpeed);
+        rb.velocity = temp;
     }
 
     void OnCollisionEnter(Collision col)
@@ -35,14 +41,6 @@ public class BallControls : MonoBehaviour {
         if (col.gameObject.CompareTag("floor"))
         {
             canJump = true;
-        }
-    }
-
-    void OnCollisionExit(Collision col)
-    {
-        if (col.gameObject.CompareTag("floor"))
-        {
-            canJump = false;
         }
     }
 }
