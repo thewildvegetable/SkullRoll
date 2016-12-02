@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 public class SkullpowerUps : MonoBehaviour
 {
 
@@ -10,6 +11,7 @@ public class SkullpowerUps : MonoBehaviour
 
     private int score;//the current score
     public int scoreIncr;//the number to increase the score by
+    public Text scoreText;//displaying the score
 
 
     public Light glowInvins;//the glow invinsibility effect
@@ -34,6 +36,8 @@ public class SkullpowerUps : MonoBehaviour
         powerCurrTime.Add(0);
         powerCurrTime.Add(0);
 
+        DisplayScore();
+
     }
 
     public int Score
@@ -50,7 +54,6 @@ public class SkullpowerUps : MonoBehaviour
         {
             Invinsible();
         }
-        IncreaseScore();
 	
 	}
 
@@ -90,7 +93,13 @@ public class SkullpowerUps : MonoBehaviour
         {
             score += (scoreIncr * 2);
         }
-        
+        DisplayScore();
+
+    }
+
+    public void DisplayScore()
+    {
+        scoreText.text = "Score: " + score.ToString();
     }
 
 }
