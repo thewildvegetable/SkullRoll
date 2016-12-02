@@ -4,7 +4,7 @@ using System.Collections;
 public class BallControls : MonoBehaviour {
 
     public float speed;
-    public float jumpCooldown;
+    private bool canJump = true;
 
     private Rigidbody rb;
 
@@ -20,17 +20,30 @@ public class BallControls : MonoBehaviour {
 
         float yspeed = 0f;
 
-        if(Input.GetKey(KeyCode.Space) && jumpCooldown > 150)
+        if(Input.GetKey(KeyCode.Space) && canJump)
         {
             yspeed = 30;
-            jumpCooldown = 0;
         }
 
         Vector3 force = new Vector3(xspeed, yspeed, zspeed);
 
         rb.AddForce(force * speed);
+    }
 
-        jumpCooldown += 1;
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.CompareTag("floor"))
+        {
+            canJump = true;
+        }
+    }
+
+    void OnCollisionExit(Collision col)
+    {
+        if (col.gameObject.CompareTag("floor"))
+        {
+            canJump = false;
+        }
     }
 }
 
