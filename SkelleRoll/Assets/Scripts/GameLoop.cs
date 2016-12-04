@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameLoop : MonoBehaviour
 {
-    public int value;
+    public int value; //Checks the current state
 
     // Use this for initialization
     void Start()
@@ -20,32 +20,61 @@ public class GameLoop : MonoBehaviour
     void Update()
     {
 
+        //Code to ignore keys
 
+        //while (value == 2) {
+        //    //DisableKey(Keycode.r);
+        //    //DisableKey(Keycode.p);
+        //}
 
+    }
+
+    bool LoadSceneOkay() { //To be finished method
+
+        
+
+        return false;
     }
 
    public void LoadState(int load)
     {
 
-        if (load == 0) //Menu State
+        switch (load)
         {
-            SceneManager.LoadScene("Menu");
+            case 0: SceneManager.LoadScene("test_level"); //Loads level (Change name of level as needed)
+                break;
+
+            case 1:
+                SceneManager.LoadScene("Menu"); //Opens start screen
+                break;
+
+            case 2:
+                SceneManager.LoadScene("GameOver"); //Currently loads game over screen
+                break;
+        }
+    }
+
+
+    static void DisableKeys(KeyCode[] keys)
+    {
+        if (!Event.current.isKey)
+        {
+            return;
         }
 
-        if (load == 1) //Gameplay State
-        { 
-
-            //Set a canPause = true
-            SceneManager.LoadScene("test_level");
-   
+        foreach (KeyCode key in keys)
+        {
+            if (Event.current.keyCode == key)
+            {
+                Event.current.Use();
+            }
         }
+    }
 
-        if (load == 2) //Game Over State
-        { 
 
-            SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
-            //Set a canPause = false
 
-        }
+    static void DisableKey(KeyCode key)
+    {
+        DisableKeys(new KeyCode[] { key });
     }
 }

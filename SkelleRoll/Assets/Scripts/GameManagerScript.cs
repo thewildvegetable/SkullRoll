@@ -2,12 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 
+using UnityEngine.SceneManagement;
 public class GameManagerScript : MonoBehaviour {
 
     public List<GameObject> handles = new List<GameObject>();
     public List<GameObject> prefabs = new List<GameObject>();
     public List<GameObject> floors = new List<GameObject>();
     public GameObject skull;
+    public GameLoop gl;
     private int timer = 0;
 
 	// Use this for initialization
@@ -33,5 +35,11 @@ public class GameManagerScript : MonoBehaviour {
             //Instantiate(temp, temp.transform.position, this.gameObject.transform.rotation);
             floors.Add(temp);
         }
-	}
+
+        if (skull.transform.localPosition.y <= -30) { //Death by falling 
+            gl.GetComponent<GameLoop>().LoadState(2);
+        }
+    }
+
+
 }
