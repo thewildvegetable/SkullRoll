@@ -50,7 +50,7 @@ public class GameLoop : MonoBehaviour
 
             case 1:
                 gameOver = false;
-                SceneManager.LoadScene("Nathan_Test"); //Loads level (Change name of level as needed)
+                SceneManager.LoadScene("test_level"); //Loads level (Change name of level as needed)
                 break;
 
             case 2:
