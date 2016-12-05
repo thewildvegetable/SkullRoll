@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FireWallScript : MonoBehaviour {
+using UnityEngine.SceneManagement;
+
+public class FireWallScriptTwo : MonoBehaviour {
 
     public GameObject fireWall;
     public GameObject gameManager;
@@ -47,13 +49,17 @@ public class FireWallScript : MonoBehaviour {
 
             //this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + .02f);
         }
-	}
+
+
+    }
 
     void OnTriggerEnter(Collider col)
     {
-        if (!col.gameObject.CompareTag("floor"))
-        {
-            Destroy(col.gameObject);
-        }
+        //if (!col.gameObject.CompareTag("floor"))
+        //{
+        //    Destroy(col.gameObject);
+        //    SceneManager.LoadScene("GameOver");
+        //}
+        
     }
 }

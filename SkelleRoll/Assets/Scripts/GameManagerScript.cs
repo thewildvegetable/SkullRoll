@@ -9,6 +9,7 @@ public class GameManagerScript : MonoBehaviour {
     public List<GameObject> prefabs = new List<GameObject>();
     public List<GameObject> floors = new List<GameObject>();
     public GameObject skull;
+    public GameObject fireWall;
     public GameLoop gl;
     private int timer = 0;
     
@@ -37,12 +38,26 @@ public class GameManagerScript : MonoBehaviour {
             floors.Add(temp);
         }
 
-        if (skull.transform.localPosition.y <= -30) { //Death by falling 
+        if (skull != null)
+        {
 
-            if (gl.gameOver == false)
-            {
-                gl.gameOver = true;
+            if (skull.transform.localPosition.y <= -30)
+            { //Death by falling 
+
+                if (gl.gameOver == false)
+                {
+                    gl.gameOver = true;
+                    gl.GetComponent<GameLoop>().LoadState(2);
+                }
+            }
+
+
+            if (fireWall.transform.position.z > skull.transform.localPosition.z)
+            { //checks for z coordinates in the event the player does some sick Melee Super Wavedash tech and flies over the wall
+                Debug.Log("Has collided");
+                Destroy(skull.gameObject);
                 gl.GetComponent<GameLoop>().LoadState(2);
+
             }
         }
     }
