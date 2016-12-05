@@ -3,7 +3,7 @@ using System.Collections;
 
 using UnityEngine.SceneManagement;
 
-public class FireWallScriptTwo : MonoBehaviour {
+public class FireWallScript : MonoBehaviour {
 
     public GameObject fireWall;
     public GameObject gameManager;
@@ -49,17 +49,15 @@ public class FireWallScriptTwo : MonoBehaviour {
 
             //this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + .02f);
         }
-
-
-    }
+	}
 
     void OnTriggerEnter(Collider col)
     {
-        //if (!col.gameObject.CompareTag("floor"))
-        //{
-        //    Destroy(col.gameObject);
-        //    SceneManager.LoadScene("GameOver");
-        //}
+        if (this.transform.localPosition.z == col.transform.localPosition.z) { //checks for z coordinates in the event the player does some sick Melee Super Wavedash tech and flies over the wall
+            Destroy(col.gameObject);
+            SceneManager.LoadScene("GameOver");
+
+        }
         
     }
 }
