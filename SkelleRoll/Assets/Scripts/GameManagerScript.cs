@@ -11,9 +11,10 @@ public class GameManagerScript : MonoBehaviour {
     public GameObject skull;
     public GameLoop gl;
     private int timer = 0;
+    
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
        //handles.AddRange(GameObject.FindGameObjectsWithTag("rearHandle"));
         handles.AddRange(GameObject.FindGameObjectsWithTag("frontHandle"));
 	}
@@ -37,7 +38,12 @@ public class GameManagerScript : MonoBehaviour {
         }
 
         if (skull.transform.localPosition.y <= -30) { //Death by falling 
-            gl.GetComponent<GameLoop>().LoadState(2);
+
+            if (gl.gameOver == false)
+            {
+                gl.gameOver = true;
+                gl.GetComponent<GameLoop>().LoadState(2);
+            }
         }
     }
 

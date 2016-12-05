@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameLoop : MonoBehaviour
 {
     public int value; //Checks the current state
+    public bool gameOver = false;
 
     // Use this for initialization
     void Start()
@@ -22,59 +23,64 @@ public class GameLoop : MonoBehaviour
 
         //Code to ignore keys
 
-        //while (value == 2) {
-        //    //DisableKey(Keycode.r);
-        //    //DisableKey(Keycode.p);
+        //while (value != 2) {
+        //    use keys here for pausing
         //}
 
     }
 
-    bool LoadSceneOkay() { //To be finished method
+    bool LoadSceneOkay()
+    { //To be finished method
 
-        
+
 
         return false;
     }
 
-   public void LoadState(int load)
+    public void LoadState(int load)
     {
 
         switch (load)
         {
-            case 0: SceneManager.LoadScene("test_level"); //Loads level (Change name of level as needed)
+            case 0:
+                gameOver = false;
+                SceneManager.LoadScene("Menu"); //Opens start screen
                 break;
+               
 
             case 1:
-                SceneManager.LoadScene("Menu"); //Opens start screen
+                gameOver = false;
+                SceneManager.LoadScene("Nathan_Test"); //Loads level (Change name of level as needed)
                 break;
 
             case 2:
-                SceneManager.LoadScene("GameOver"); //Currently loads game over screen
+                SceneManager.LoadScene("GameOver",LoadSceneMode.Additive); //Currently loads game over screen
                 break;
         }
     }
-
-
-    static void DisableKeys(KeyCode[] keys)
-    {
-        if (!Event.current.isKey)
-        {
-            return;
-        }
-
-        foreach (KeyCode key in keys)
-        {
-            if (Event.current.keyCode == key)
-            {
-                Event.current.Use();
-            }
-        }
-    }
-
-
-
-    static void DisableKey(KeyCode key)
-    {
-        DisableKeys(new KeyCode[] { key });
-    }
 }
+
+
+//    static void DisableKeys(KeyCode[] keys)
+//    {
+//        if (!Event.current.isKey)
+//        {
+//            return;
+//        }
+
+//        foreach (KeyCode key in keys)
+//        {
+//            if (Event.current.keyCode == key)
+//            {
+//                Event.current.Use();
+//            }
+//        }
+//    }
+
+
+
+//    static void DisableKey(KeyCode key)
+//    {
+//        DisableKeys(new KeyCode[] { key });
+//    }
+//}
