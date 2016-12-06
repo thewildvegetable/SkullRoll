@@ -4,11 +4,15 @@ using System.Collections;
 public class CoinPickUp : MonoBehaviour {
 
     // Use this for initialization
-    public SkullpowerUps powers;
+    //public SkullpowerUps powers;
+    private SkullpowerUps powerUp;
+    private GameObject skull;
     private int powerType = 1;//this is the double score
     void Start () {
-	
-	}
+        skull = GameObject.FindGameObjectWithTag("player");
+        powerUp = skull.GetComponent<SkullpowerUps>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -19,7 +23,7 @@ public class CoinPickUp : MonoBehaviour {
     {
         if (ply.gameObject.tag == "player")
         {
-            powers.IncreaseScore();
+            powerUp.IncreaseScore();
             Destroy(this.gameObject);
         }
     }

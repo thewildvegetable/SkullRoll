@@ -7,8 +7,8 @@ public class InvinciblePick : MonoBehaviour {
 
     // Use this for initialization 
     private SkullpowerUps powerUp;
-    public SkullpowerUps powers;
-
+    private SkullpowerUps powers;
+    public GameObject skull;
     
 
     public int powerType;//this is the powerup type relating to the index in the powerup script
@@ -16,7 +16,7 @@ public class InvinciblePick : MonoBehaviour {
     //can add more as we go a long
 	void Start () {
         //powerUp = GameObject.FindGameObjectWithTag("player").GetComponent<SkullpowerUps>();
-  
+       skull = GameObject.FindGameObjectWithTag("player");
        
 	}
 	
