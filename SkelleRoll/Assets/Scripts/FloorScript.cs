@@ -5,11 +5,11 @@ using System.Collections.Generic;
 public class FloorScript : MonoBehaviour {
 
     public List<GameObject> spawners = new List<GameObject>();
-    GameObject firewall;
+    public GameObject firewall;
 
 	// Use this for initialization
 	void Start () {
-        firewall = GameObject.FindGameObjectWithTag("FireWall");
+        firewall = GameObject.FindGameObjectWithTag("Fire");
 	}
 	
 	// Update is called once per frame

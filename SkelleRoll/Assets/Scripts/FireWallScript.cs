@@ -55,11 +55,10 @@ public class FireWallScriptTwo : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        //if (!col.gameObject.CompareTag("floor"))
-        //{
-        //    Destroy(col.gameObject);
-        //    SceneManager.LoadScene("GameOver");
-        //}
+        if (!col.gameObject.CompareTag("floor"))
+        {
+            Destroy(col.gameObject);
+        }
         
     }
 }
