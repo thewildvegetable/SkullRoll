@@ -9,14 +9,15 @@ public class FloorScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        firewall = GameObject.FindGameObjectWithTag("FireWall");
+        firewall = GameObject.FindGameObjectWithTag("Fire");
+        Debug.Log(firewall);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
         //if time passed a certain point then delete this
-        if (firewall.transform.position.z >= this.transform.position.z + 30)
+        if (firewall.transform.position.z <= this.transform.position.z + 30)
         {
             Destroy(this);
         }
