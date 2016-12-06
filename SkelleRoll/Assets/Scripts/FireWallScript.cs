@@ -29,7 +29,7 @@ public class FireWallScriptTwo : MonoBehaviour {
             steeringForce = Vector3.zero;
 
             //seek path
-            seekingForce = target.transform.position - fireWall.transform.position;
+            seekingForce = fireWall.transform.position - target.transform.position;
             distance = seekingForce.magnitude;
             seekingForce = seekingForce.normalized * seekWeight; //1.3f
             steeringForce = seekingForce - fireWall.transform.forward;
