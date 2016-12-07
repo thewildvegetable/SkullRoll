@@ -93,7 +93,7 @@ public class SkullpowerUps : MonoBehaviour
         {
             score += (scoreIncr * 2);
         }
-        DisplayScore();
+       // DisplayScore();
 
     }
 
