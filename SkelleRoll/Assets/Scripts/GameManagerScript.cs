@@ -9,6 +9,7 @@ public class GameManagerScript : MonoBehaviour {
     public List<GameObject> prefabs = new List<GameObject>();
     public List<GameObject> floors = new List<GameObject>();
     public List<GameObject> powerUps = new List<GameObject>();
+    public List<GameObject> enemies = new List<GameObject>();
     public GameObject skull;
     public GameObject fireWall;
     public GameLoop gl;
@@ -58,10 +59,10 @@ public class GameManagerScript : MonoBehaviour {
                     //spawn enemy
                     spawnVal = Random.Range(0, floorTemp.GetComponent<FloorScript>().spawners.Count);
                     GameObject spawnLoc = floorTemp.GetComponent<FloorScript>().spawners[spawnVal];
-                    //spawnVal = Random.Range(0, enemies.Count);
-                    //GameObject enemy = Instantiate(enemies[spawnVal]);
-                    //enemy.transform.SetParent(floorTemp.transform);
-                    //enemy.transform.position = spawnLoc.transform.position;
+                    spawnVal = Random.Range(0, enemies.Count);
+                    GameObject enemy = Instantiate(enemies[spawnVal]);
+                    enemy.transform.SetParent(floorTemp.transform);
+                    enemy.transform.position = spawnLoc.transform.position;
                 }
                 else if (spawnVal < 7)
                 {
