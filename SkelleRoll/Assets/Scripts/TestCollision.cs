@@ -13,10 +13,11 @@ public class TestCollision : MonoBehaviour {
         if (col.gameObject.tag == "Obstacle") {
 
             //Am using these to figure things out
-//            gl.LoadState(2);
+            //            gl.LoadState(2);
             //Destroy(col.gameObject);
-            //Time.timeScale = 0;
-            SceneManager.LoadScene("GameOver"); //Not using LoadState at the moment. Trying to figure out why it isn't calling.
+            Destroy(gameObject);    
+        //Time.timeScale = 0;
+            //SceneManager.LoadScene("GameOver"); //Not using LoadState at the moment. Trying to figure out why it isn't calling.
         }
 
     }
