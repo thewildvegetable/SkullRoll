@@ -29,7 +29,7 @@ public class FireWallScriptTwo : MonoBehaviour {
             steeringForce = Vector3.zero;
 
             //seek path
-            seekingForce = target.transform.position - fireWall.transform.position;
+            seekingForce = fireWall.transform.position - target.transform.position;
             distance = seekingForce.magnitude;
             seekingForce = seekingForce.normalized * seekWeight; //1.3f
             steeringForce = seekingForce - fireWall.transform.forward;
@@ -55,11 +55,10 @@ public class FireWallScriptTwo : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        //if (!col.gameObject.CompareTag("floor"))
-        //{
-        //    Destroy(col.gameObject);
-        //    SceneManager.LoadScene("GameOver");
-        //}
+        if (!col.gameObject.CompareTag("floor"))
+        {
+            Destroy(col.gameObject);
+        }
         
     }
 }
