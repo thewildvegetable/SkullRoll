@@ -28,7 +28,7 @@ public class GameManagerScript : MonoBehaviour {
         {
             //spawn stuff
             timer++;
-            if (timer % 60 == 0)
+            if (timer % 20 == 0)
             {
                 int spawnVal = Random.Range(0, prefabs.Count);
 
@@ -78,6 +78,7 @@ public class GameManagerScript : MonoBehaviour {
 
                 //Instantiate(temp, temp.transform.position, this.gameObject.transform.rotation);
                 floors.Add(floorTemp);
+                handles.Add(floorTemp);
             }
 
             //player death

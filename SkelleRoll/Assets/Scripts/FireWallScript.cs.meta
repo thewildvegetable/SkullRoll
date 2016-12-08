@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: f3b6a535131fa5249ad942f765d6845c
-timeCreated: 1478726713
+timeCreated: 1481214910
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - fireWall: {fileID: 1000010198974882, guid: 003501ee1f6b584428e9c2a73d736f4a, type: 2}
+  - gameManager: {instanceID: 0}
+  - target: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
