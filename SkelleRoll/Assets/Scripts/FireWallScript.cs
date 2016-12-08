@@ -41,10 +41,10 @@ public class FireWallScript : MonoBehaviour {
             if (timer >= 1)
             {
                 listPos++;
-                target = gameManager.GetComponent<GameManagerScript>().handles[listPos];
+                target = gameManager.GetComponent<GameManagerScript>().floors[listPos];
                 startPos = transform.position;
                 timer = 0;
-                timeChange = 0.7f;  //speed up firewall after first part
+                timeChange = 0.9f;  //speed up firewall after first part
             }
 
             //make fireWall look at target
@@ -55,7 +55,18 @@ public class FireWallScript : MonoBehaviour {
 
             //this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + .02f);
         }
-
+        else
+        {
+            if (gameManager.GetComponent<GameManagerScript>().floors[listPos] != null)
+            {
+                target = gameManager.GetComponent<GameManagerScript>().floors[listPos];
+            }
+            else
+            {
+                listPos++;
+                target = gameManager.GetComponent<GameManagerScript>().floors[listPos];
+            }
+        }
 
     }
 
