@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class FireWallScript : MonoBehaviour {
 
-    public GameObject fireWall;
     public GameObject gameManager;
     public GameObject target;      //target to seek/path follow
     private float distance = float.MaxValue;
@@ -13,11 +12,12 @@ public class FireWallScript : MonoBehaviour {
     private int listPos = 0;        //position in the handle list
     public bool enabled = true;
     public float timer = 0;
+    public float timeChange = 0.2f;
 
 
 	// Use this for initialization
 	void Start () {
-        startPos = fireWall.transform.position;
+        startPos = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -25,11 +25,13 @@ public class FireWallScript : MonoBehaviour {
         if (target != null && enabled)
         {
             //increment timer
-            timer += Time.deltaTime;
+            timer += timeChange * Time.deltaTime;
             Debug.Log(timer);
+            Debug.Log(startPos);
+            Debug.Log(target.transform.position);
 
             //seek path
-            fireWall.transform.position = Vector3.Lerp(startPos, target.transform.position, timer);
+            transform.position = Vector3.Lerp(startPos, target.transform.position, timer);
             /*seekingForce = fireWall.transform.position - target.transform.position;
             distance = seekingForce.magnitude;
             seekingForce = seekingForce.normalized * seekWeight; //1.3f
@@ -40,13 +42,13 @@ public class FireWallScript : MonoBehaviour {
             {
                 listPos++;
                 target = gameManager.GetComponent<GameManagerScript>().handles[listPos];
-                startPos = fireWall.transform.position;
+                startPos = transform.position;
                 timer = 0;
-                Debug.Log("reset");
+                timeChange = 0.7f;  //speed up firewall after first part
             }
 
             //make fireWall look at target
-            fireWall.transform.LookAt(target.transform);
+            transform.LookAt(target.transform);
 
             //move
             //fireWall.transform.position = fireWall.transform.position - steeringForce;
