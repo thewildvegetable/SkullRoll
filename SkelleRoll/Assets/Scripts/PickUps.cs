@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class InvinciblePick : MonoBehaviour {
+public class PickUps : MonoBehaviour {
     //this will instead (like the enum for moving platforms)
     //hold an enum which will determin what type of powerup it is
 
     // Use this for initialization 
     private SkullpowerUps powerUp;
-    private SkullpowerUps powers;
-    public GameObject skull;
+    private GameObject skull;
     
 
     public int powerType;//this is the powerup type relating to the index in the powerup script
@@ -17,6 +16,7 @@ public class InvinciblePick : MonoBehaviour {
 	void Start () {
         //powerUp = GameObject.FindGameObjectWithTag("player").GetComponent<SkullpowerUps>();
        skull = GameObject.FindGameObjectWithTag("player");
+       powerUp = skull.GetComponent<SkullpowerUps>();
        
 	}
 	
@@ -29,16 +29,10 @@ public class InvinciblePick : MonoBehaviour {
     {
         if(ply.gameObject.tag=="player")
         {
-            switch(powerType)
-            {
-                //more cases will be added if there are more powerups
-                case 0:
-                    powers.powerupActive[0] = true;
+                    powerUp.powerupActive[powerType] = true;
                     Destroy(this.gameObject);
-                    break;
-                default:
-                    break;
-            }
+
+            
         }
     }
 }
