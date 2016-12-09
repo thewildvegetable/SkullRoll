@@ -101,6 +101,17 @@ public class GameManagerScript : MonoBehaviour {
 
             }
         }
+
+        if (skull == null)
+        {
+            if (gl.gameOver == false)
+            {
+                gl.gameOver = true;
+                gl.GetComponent<GameLoop>().LoadState(2);
+            }
+        }
+
+        
     }
 
 
