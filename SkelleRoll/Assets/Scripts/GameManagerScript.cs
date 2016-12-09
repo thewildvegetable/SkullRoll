@@ -102,6 +102,7 @@ public class GameManagerScript : MonoBehaviour {
             }
         }
 
+
         if (skull == null)
         {
             if (gl.gameOver == false)
@@ -110,8 +111,10 @@ public class GameManagerScript : MonoBehaviour {
                 gl.GetComponent<GameLoop>().LoadState(2);
             }
         }
-
-        
+        else
+        {
+            gl.GetComponent<GameLoop>().LoadState(2);
+        }
     }
 
 
