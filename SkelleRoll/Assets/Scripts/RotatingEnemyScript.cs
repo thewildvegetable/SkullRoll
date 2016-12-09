@@ -26,4 +26,6 @@ public class RotatingEnemyScript : MonoBehaviour
         //Rotating on Z
         transform.Rotate(Vector3.forward * spinSpeedz);
     }
+
+    
 }

@@ -111,10 +111,6 @@ public class GameManagerScript : MonoBehaviour {
                 gl.GetComponent<GameLoop>().LoadState(2);
             }
         }
-        else
-        {
-            gl.GetComponent<GameLoop>().LoadState(2);
-        }
     }
 
 

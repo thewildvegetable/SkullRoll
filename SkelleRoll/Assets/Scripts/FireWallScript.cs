@@ -26,9 +26,6 @@ public class FireWallScript : MonoBehaviour {
         {
             //increment timer
             timer += timeChange * Time.deltaTime;
-            Debug.Log(timer);
-            Debug.Log(startPos);
-            Debug.Log(target.transform.position);
 
             //seek path
             transform.position = Vector3.Lerp(startPos, target.transform.position, timer);

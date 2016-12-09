@@ -23,7 +23,13 @@ public class CollisonDestruction : MonoBehaviour {
     {
         if (col.gameObject.CompareTag("player"))
         {
-            Destroy(col.gameObject);
+            if (col.gameObject.GetComponent<SkullpowerUps>().canBeHit)
+            {
+                GameObject manager = GameObject.FindGameObjectWithTag("GameManager");
+                Destroy(col.gameObject);
+                manager.GetComponent<GameManagerScript>().gl.gameOver = true;
+                manager.GetComponent<GameManagerScript>().gl.GetComponent<GameLoop>().LoadState(2);
+            }
         }
     }
 }

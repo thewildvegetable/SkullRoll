@@ -19,7 +19,7 @@ public class SkullpowerUps : MonoBehaviour
     public List<float> powerupTime;//tells how long the powerup corresponding is active for
                                    // private float[] powerCurrTime;
 
-    private bool canBeHit;//tells if user can take damage in this state
+    public bool canBeHit = true;//tells if user can take damage in this state
     private List<float> powerCurrTime = new List<float>();//tells how long the powerup has been active for
                                       /// <summary>
                                       /// In array index:
