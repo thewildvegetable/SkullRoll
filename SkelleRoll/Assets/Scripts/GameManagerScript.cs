@@ -14,6 +14,7 @@ public class GameManagerScript : MonoBehaviour {
     public GameObject fireWall;
     public GameLoop gl;
     private int timer = 0;
+    public bool enabled = true;
     
 
     // Use this for initialization
@@ -24,7 +25,7 @@ public class GameManagerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (skull != null)
+        if (skull != null && enabled)
         {
             //spawn stuff
             timer++;

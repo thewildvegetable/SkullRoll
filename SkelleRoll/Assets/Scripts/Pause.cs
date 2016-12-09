@@ -9,6 +9,7 @@ public class Pause : MonoBehaviour {
     public Button backGame;
     private bool isPaused;
     public GameObject Player;
+  
     void Start () {
         Time.timeScale = 1;
         backGame = backGame.GetComponent<Button>();
@@ -27,6 +28,8 @@ public class Pause : MonoBehaviour {
             mainCanvas.enabled = true;
             backGame.enabled = true;
             Cursor.visible = true;
+            GameObject.FindGameObjectWithTag("Fire").GetComponent<FireWallScript>().enabled = false;
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>().enabled = false;
         }
         else if (Time.timeScale == 0 && isPaused == false)
         {
@@ -34,6 +37,8 @@ public class Pause : MonoBehaviour {
             Cursor.visible = false;
             mainCanvas.enabled = false;
             backGame.enabled = false;
+            GameObject.FindGameObjectWithTag("Fire").GetComponent<FireWallScript>().enabled = true;
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>().enabled = true;
         }
     }
 

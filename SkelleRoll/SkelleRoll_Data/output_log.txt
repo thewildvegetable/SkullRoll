@@ -16,31 +16,21 @@ Platform assembly: C:\Users\Jeffrey Karger\Downloads\GDD2Proj\InCaseOfFuckUp\Sku
 Loading C:\Users\Jeffrey Karger\Downloads\GDD2Proj\InCaseOfFuckUp\SkullRoll\SkelleRoll\SkelleRoll_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\Jeffrey Karger\Downloads\GDD2Proj\InCaseOfFuckUp\SkullRoll\SkelleRoll\SkelleRoll_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\Jeffrey Karger\Downloads\GDD2Proj\InCaseOfFuckUp\SkullRoll\SkelleRoll\SkelleRoll_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.080 seconds
+- Completed reload, in  0.077 seconds
 Platform assembly: C:\Users\Jeffrey Karger\Downloads\GDD2Proj\InCaseOfFuckUp\SkullRoll\SkelleRoll\SkelleRoll_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Jeffrey Karger\Downloads\GDD2Proj\InCaseOfFuckUp\SkullRoll\SkelleRoll\SkelleRoll_Data\Managed\System.dll (this message is harmless)
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.768088 ms
+UnloadTime: 0.873592 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 2c70 -> priority: 1 
+  Thread -> id: 2c3c -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.850774 ms
+UnloadTime: 8.341827 ms
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 888.
-Total: 0.294345 ms (FindLiveObjects: 0.023399 ms CreateObjectMapping: 0.060757 ms MarkObjects: 0.197872 ms  DeleteObjects: 0.010673 ms)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at SkullpowerUps.DisplayScore () [0x00000] in <filename unknown>:0 
-  at SkullpowerUps.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-MilkPower(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 931.
+Total: 0.568574 ms (FindLiveObjects: 0.060757 ms CreateObjectMapping: 0.064452 ms MarkObjects: 0.373165 ms  DeleteObjects: 0.062810 ms)
 
 coin(Clone) (UnityEngine.GameObject)
  
@@ -58,7 +48,59 @@ coin(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
+MilkPower(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+MilkPower(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
 coin(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+powerup1(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+coin(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+MilkPower(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+coin(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+coin(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+powerup1(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+coin(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+MilkPower(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+coin(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+coin(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+MilkPower(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
